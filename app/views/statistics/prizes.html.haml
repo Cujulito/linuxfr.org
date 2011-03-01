@@ -1,0 +1,14 @@
+-# See http://haml-lang.com/docs.html
+#contents
+  =h1 "Statistiques d'aide au choix des primables"
+  %p Mois : #{@month}/#{@year}
+
+  %section
+    %h2 Dépêches par score
+    %ul
+      - @news_top.each do |news|
+        %ol
+          \[#{news.score}]
+          = link_to news.title, news
+          ·
+          = link_to news.author_name, news.user

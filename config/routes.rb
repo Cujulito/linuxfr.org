@@ -83,6 +83,11 @@ LinuxfrOrg::Application.routes.draw do
   #end
   get "/recherche" => "search#google", :as => :search
 
+  # Statistics
+  controller :statistics do
+    get "/statistiques/prizes(/:year-:month)", :action => :prizes
+  end
+
   # Redaction
   get "/redaction" => "redaction#index"
   namespace :redaction do
